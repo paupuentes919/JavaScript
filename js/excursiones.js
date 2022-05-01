@@ -41,7 +41,7 @@ function mostrarExcursionesDisponibles() {
 function traerInfo(exc) {
 	return `
   <div class="thumbnail">
-    <div class="image "><a href="one-page.html"><img class="undefined" src="${exc.imagenHomePage}"></a></div>
+    <div class="image "><img class="undefined" src="${exc.imagenHomePage}"></div>
     <div class="caption">
         <div>
             <h3>${exc.tipoExcursion}</h3>
@@ -124,6 +124,8 @@ function mostrarInfo(tipo, localidad, descripcion, precio, id, imagenVintage, ho
         			<p>${descripcion}</p>
 					<p class="informacion-excursiones">Incluye</p>
 					<p>${incluye}</p>
+					<p class="informacion-excursiones">Precio Unitario</p>
+					<p>$ ${precio}</p>
 				</div>
         		<div> 
 					<div class="texto-foto">
@@ -216,7 +218,7 @@ function agregadoAlCarritoMensaje() {
 	btns.addEventListener("click", () => {
 		Toastify({
 			text: "Agregado al carrito 🛒",
-			duration: 5000,
+			duration: 3500,
 			style:{
 				background: "linear-gradient(to right, #212F3C, #1F618D)",
 				width:"20%",

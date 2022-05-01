@@ -124,5 +124,7 @@
 }
 .horario2{
     margin-right: 2.2rem;
-
 }
+  #menu-93.mbr-navbar--stuck .mbr-navbar__section{
+	  background-color: #173E58 ;
+  }
