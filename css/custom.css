@@ -35,7 +35,7 @@
 }
 
 .estampilla {
-	background-color: #fff;
+	/* background-color: #fff;
 	background-image: url("http://todovector.com/vector/figuras-y-formas/timbres/estampillas/3.png");
 	background-repeat: no-repeat;
 	background-position: right;
@@ -49,6 +49,17 @@
 	inset: 0;
 	font-family: "Oxygen", sans-serif;
 	box-shadow: 5px 5px 40px;
+	transform: translateX(0); */
+	position: fixed;
+  	top: 80px;
+  	right: -1145px;
+  	width: 35%;
+  	height: 91%;
+  	overflow: scroll;
+  	z-index: 3;
+  	background: #F2F4F4;
+  	padding: 1.5rem;
+  	transition: all 0.3s linear; 
 }
 
 .estampilla img {
@@ -125,6 +136,10 @@
 .horario2{
     margin-right: 2.2rem;
 }
-  #menu-93.mbr-navbar--stuck .mbr-navbar__section{
-	  background-color: #173E58 ;
-  }
+#menu-93.mbr-navbar--stuck .mbr-navbar__section{
+	background-color: #173E58 ;
+}
+.btn-carrito{
+background-color: transparent;
+border: none;
+}
