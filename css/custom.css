@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Homemade+Apple&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Homemade+Apple&family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Grape+Nuts&family=Homemade+Apple&family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Architects+Daughter&family=Grape+Nuts&family=Homemade+Apple&family=Rock+Salt&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Architects+Daughter&family=Bona+Nova&family=Grape+Nuts&family=Homemade+Apple&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Architects+Daughter&family=Bona+Nova&family=Freehand&family=Grape+Nuts&family=Homemade+Apple&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Architects+Daughter&family=Bona+Nova&family=Freehand&family=Grape+Nuts&family=Homemade+Apple&family=Rock+Salt&family=Shadows+Into+Light&display=swap');
+#contenedor-excursiones {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 2rem;
+}
+
+.polaroid {
+	background-color: #d5d8dc;
+	/*background-image: url("https://media.istockphoto.com/vectors/postal-envelope-on-the-theme-of-travel-with-stamp-vector-id1084470656");*/
+	background-repeat: no-repeat;
+	min-width: 50%;
+	min-height: 50%;
+	position: fixed;
+	z-index: 1000;
+	inset: 0;
+	border-color: white;
+	border-bottom-width: 8rem;
+	border-top-width: 2rem;
+	border-left-width: 2rem;
+	border-right-width: 2rem;
+	font-family: "Bona Nova", serif;
+	box-shadow: 5px 5px 40px;
+}
+
+.polaroid img {
+	max-width: 50rem;
+}
+
+.estampilla {
+	background-color: #fff;
+	background-image: url("http://todovector.com/vector/figuras-y-formas/timbres/estampillas/3.png");
+	background-repeat: no-repeat;
+	background-position: right;
+	border: 2rem solid #943126;
+	outline: 2rem dashed #154360;
+	outline-offset: -20px;
+	min-width: 50rem;
+	min-height: 50rem;
+	position: fixed;
+	z-index: 1000;
+	inset: 0;
+	font-family: "Oxygen", sans-serif;
+	box-shadow: 5px 5px 40px;
+}
+
+.estampilla img {
+	max-width: 50rem;
+}
+
+.texto-vintage-titulo {
+	font-family: "Rock Salt", cursive;
+}
+.texto-foto{
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    padding: 2rem;
+    margin-top: -3.8rem;
+}
+
+.texto-vintage-localidad {
+	font-family: 'Shadows Into Light', cursive;
+    font-size: 20px;
+}
+
+.fotos-vintage {
+	min-width: 100%;
+	height: 35rem;
+}
+
+.modal-recuadro {
+	border-color: #000;
+	background-color: #d5d8dc;
+	color: #000;
+	margin-left: 1rem;
+	margin-right: 2rem;
+}
+.fecha-realizacion{
+    display: flex;
+    margin-top: 2rem;
+    margin-right: 2rem;
+}
+
+.btn-title {
+	pointer-events: auto !important;
+}
+
+.imagen-chica {
+	width: 1rem;
+}
+
+.imagen-catalogo-excursiones {
+	width: 37rem;
+}
+.contenedor-informacion{
+    display: flex;
+    margin-right: 2rem;
+}
+.informacion-excursiones{
+    font-weight: bold;
+    text-decoration: underline 1px #154360;
+}
+#selectorPersonas{
+    width: 9.3rem;
+}
+.precio-total{
+    margin-top: 2rem;
+    font-weight: bold;
+    background: #F9E79F;
+}
+.horario{
+    display: flex;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    margin-left: -2rem;
+}
+.horario2{
+    margin-right: 2.2rem;
+
+}
