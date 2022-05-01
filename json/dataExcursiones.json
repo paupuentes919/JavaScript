@@ -89,6 +89,36 @@
 		"horario": "De 16 am a 19 pm",
 		"imagenHomePage": "img/HomePageExcursiones/excursion-caballo.jpg",
 		"imagenVintage": "img/Vintage/caballo-vintage.jpg"
+	},
+	{"id": 10, 
+		"localidad": "Esteros del Iberá, Corrientes", 
+		"tipoExcursion": "Paseo por el Establecimiento Las Marias",
+		"precioUnitario": "3000",
+		"descripcion": "Las Marías es el mayor productor mundial de Yerba Mate -aquí nace la yerba Taragüí, sinónimo de mate no sólo en Argentina. Realice paseos por los jardines y acerquese a la Mayoría, la vieja casa familiar, que es hoy el emblema del establecimiento. Por último, disfrute de la degustación de los productos",
+		"incluye": "Guía durante toda la excursión",
+		"horario": "Entrada de 10 am a 18 pm",
+		"imagenHomePage": "img/HomePageExcursiones/excursion-lasmarias.jpg",
+		"imagenVintage": "img/Vintage/lasmarias-vintage.jpg"
+	},
+	{"id": 11, 
+		"localidad": "Esteros del Iberá, Corrientes", 
+		"tipoExcursion": "Recorrido Nautico por los Esteros",
+		"precioUnitario": "8000",
+		"descripcion": "Disfrute de un recorrido en lancha por los Esteros del Iberá donde podrá apreciar y estar en contacto con toda la fauna y flora que ofrece este maravilloso lugar mágico",
+		"incluye": "Guía durante toda la excursión y aperitivos",
+		"horario": "De 8 am a 15 pm",
+		"imagenHomePage": "img/HomePageExcursiones/excursion-esteroslancha.jpg",
+		"imagenVintage": "img/Vintage/lanchaesteros-vintage.jpg"
+	},
+	{"id": 12, 
+		"localidad": "Esteros del Iberá, Corrientes", 
+		"tipoExcursion": "Visita a la Represa Yacyretá",
+		"precioUnitario": "2000",
+		"descripcion": "Recorra el Complejo Hidroeléctrico Yacyretá, es la represa más grande de Argentina, realizada en conjunto con el país vecino Paraguay, sobre el curso del río Paraná, cuya principal finalidad es la transformación de la energía hídrica en energía eléctrica",
+		"incluye": "Guía durante toda la excursión y aperitivos",
+		"horario": "De 11 am a 13 pm",
+		"imagenHomePage": "img/HomePageExcursiones/excursion-yacyreta.jpg",
+		"imagenVintage": "img/Vintage/yacyreta-vintage.jpg"
 	}
 
 ]
