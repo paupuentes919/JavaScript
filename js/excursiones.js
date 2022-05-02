@@ -161,9 +161,10 @@ function mostrarCarrito() {
 		let card = document.createElement("div");
 		card.innerHTML = `
 		<div class="container">
-		<h1 class="texto-vintage-titulo">${exc.tipoExcursion}</h1>
+		<p class="text-titulo-carrito">Mi Carrito de Compras</p>
+		<h1 class="">${exc.tipoExcursion}</h1>
 		<div>
-		<img src="${exc.imagen}" class="imagen-chica">
+		<img src="${exc.imagenHomePage}" class="imagen-chica">
 		<h4>${exc.localidad}</h4>
 		<h4>${exc.precioTotal}</h4>
 		<h5>${carrito.precioTotal}</h5>
@@ -173,10 +174,7 @@ function mostrarCarrito() {
 		modalCarrito.appendChild(card);
 		count++;
 		console.log("Llamado" + count + ' ' + card);
-	});
-	
-	
-	
+	});	
 }
 
 

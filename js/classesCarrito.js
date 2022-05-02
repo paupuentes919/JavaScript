@@ -6,23 +6,33 @@ class Carrito {
 
 	agregar(idSeleccionada, personasSeleccionadas, fechaSeleccionada) {
 		console.log(idSeleccionada, personasSeleccionadas, fechaSeleccionada);
-		let index = excursionesDisponibles.findIndex(
-			(excursion) => excursion.id === idSeleccionada
-		);
+		let index;
 
-		// TODO
-		if (index < 0) return alert("Esa excursion no existe");
+		fetch('json/dataExcursiones.json')
+		.then((resultado) => resultado.json())
+		.then((dataExcursiones) => {
+			dataExcursiones.find((excursion) => {
+				if (excursion.id === idSeleccionada){
+					excursion.fecha = fechaSeleccionada;
+					excursion.personas = Number(personasSeleccionadas);
+					excursion.precioTotal = excursion.personas * excursion.precioUnitario;
+					console.log(excursion);	
+					this.excursionesSeleccionadas.push(excursion);
+					this.calcularTotal();
+					actualizarStorage(this.excursionesSeleccionadas);
+				}		
+			})
+		});	
 
-		let excursion = JSON.parse(JSON.stringify(excursionesDisponibles[index]));
+		
 
-		excursion.fecha = fechaSeleccionada;
-		excursion.personas = Number(personasSeleccionadas);
-		excursion.precioTotal = excursion.personas * excursion.precioUnitario;
+		// // TODO
+		// if (index < 0) return alert("Esa excursion no existe");
 
-		console.log(excursion);
-		this.excursionesSeleccionadas.push(excursion);
-		this.calcularTotal();
-		actualizarStorage(this.excursionesSeleccionadas);
+		//let excursion = JSON.parse(JSON.stringify(excursionesDisponibles[index]));
+
+	
+		
 	}
 
 	eliminar(idSeleccionada) {
@@ -31,7 +41,6 @@ class Carrito {
 		);
 
 		this.excursionesSeleccionadas.splice(index, 1);
-
 		this.calcularTotal();
 		actualizarStorage(this.excursionesSeleccionadas);
 	}

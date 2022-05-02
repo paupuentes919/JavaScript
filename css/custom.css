@@ -105,7 +105,7 @@
 }
 
 .imagen-chica {
-	width: 1rem;
+	width: 10rem;
 }
 
 .imagen-catalogo-excursiones {
@@ -142,4 +142,13 @@
 .btn-carrito{
 background-color: transparent;
 border: none;
+}
+.text-titulo-carrito{
+	font-weight: bold;
+	font-size: 40px;
+	font-family: "Oxygen", sans-serif;
+	position: inherit;
+	margin-left: 10rem;
+	margin-bottom: 3rem;
+	text-decoration: underline 5px #173E58 ;
 }
