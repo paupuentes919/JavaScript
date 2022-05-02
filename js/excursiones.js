@@ -7,8 +7,8 @@ const carrito = new Carrito(JSON.parse(localStorage.getItem("carrito")) || []);
 mostrarExcursionesDisponibles();
 const modalInfo = document.querySelector("#modal-info");
 const modalCarrito = document.querySelector("#modal-carrito");
-let personas = 1;
-let fecha;
+let personas = 0;
+let fecha = null ;
 let precioActualizado = null;
 //let excursionesSeleccionadasCarrito = traerExcursionesSeleccionadas();
 /*-------------------------- FUNCIONES -------------------------- */
@@ -138,15 +138,15 @@ function mostrarInfo(tipo, localidad, descripcion, precio, id, imagenVintage, ho
 						</div>
 						
 						<div class="fecha-realizacion">Cantidad de Personas
-							<input type="number" min="1" value="1" placeholder="Cantidad de personas" name="personas" id="selectorPersonas" data-id="${id}" class="modal-recuadro" oninput="actualizarPrecio(event)" />
+							<input type="number" min="1" value="0" placeholder="Cantidad de personas" name="personas" id="selectorPersonas" data-id="${id}" class="modal-recuadro" oninput="actualizarPrecio(event)" />
 						</div>
 						<div class="precio-total">Precio Total: $<span id="precioTotal">0</span></div>
 					</div>
 				</div>
 			</section>
 		
-				<button disabled title="Seleccione fecha de realización" id="btnAgregar" class="btn btn-default btn-title" onclick="modalInfo.toggleAttribute('open');agregarExcursion(${id});agregadoAlCarritoMensaje();">Agregar al carrito</button>
-				<button class="btn btn-default" onclick="modalInfo.toggleAttribute('open')">cancelar</button>
+				<button disabled title="Seleccione una fecha de realización y/o cantidad de personas" id="btnAgregar" class="btn btn-default btn-title" onclick="modalInfo.toggleAttribute('open');agregarExcursion(${id});agregadoAlCarritoMensaje();">Agregar al carrito</button>
+				<button class="btn btn-default" onclick="modalInfo.toggleAttribute('open'); borrarCache();">cancelar</button>
 
 		</div>
   `;
@@ -185,23 +185,28 @@ function agregarExcursion(idExcusrsion) {
 }
 
 function actualizarPrecio(event) {
-	personas = event.target.value;
-	let precio = event.target.dataset.precioUnitario;
+	personas = event.target.value; 
+	let total;
+
+	if(fecha!= null)
+		habilitarBoton();
+
 	fetch('json/dataExcursiones.json')
 		.then((resultado) => resultado.json())
 		.then((dataExcursiones) => {
 			dataExcursiones.find((excursion) => {
-				excursion.id == event.target.dataset.id
-				
+				if (excursion.id == event.target.dataset.id){
+					total = personas * excursion.precioUnitario;
+					document.querySelector("#precioTotal").innerHTML = total;
+				}		
 			})
-		});
-
-	document.querySelector("#precioTotal").innerHTML = personas * precio;
+	});	
 }
 
 function actualizarFecha(event) {
 	fecha = event.target.value;
-	habilitarBoton();
+	if(personas != 0)
+		habilitarBoton();
 }
 
 function habilitarBoton() {
@@ -225,4 +230,8 @@ function agregadoAlCarritoMensaje() {
 			}
 		}).showToast();
 	})
+}
+function borrarCache(){
+	personas=0;
+	fecha=null;
 }
