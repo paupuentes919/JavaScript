@@ -2,6 +2,7 @@ class Carrito {
 	constructor(excursionesSeleccionadas) {
 		this.excursionesSeleccionadas = excursionesSeleccionadas;
 		this.precioTotal = 0;
+		
 	}
 
 	agregar(idSeleccionada, personasSeleccionadas, fechaSeleccionada) {
@@ -46,12 +47,15 @@ class Carrito {
 	}
 
 	calcularTotal() {
+		const carritoTotal = document.querySelector('.cart-total');
 		let total = 0;
 
 		this.excursionesSeleccionadas.forEach((excursion) => {
 			total = total + excursion.precioTotal;
+			carritoTotal.innerHTML = total;
 		});
 
 		this.precioTotal = total;
+		//carritoTotal.appendChild(total);
 	}
 }

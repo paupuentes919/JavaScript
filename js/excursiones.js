@@ -160,20 +160,24 @@ function mostrarCarrito() {
 		let count= 0;
 		let card = document.createElement("div");
 		card.innerHTML = `
-		<div class="container">
-		<p class="text-titulo-carrito">Mi Carrito de Compras</p>
-		<h1 class="">${exc.tipoExcursion}</h1>
-		<div>
-		<img src="${exc.imagenHomePage}" class="imagen-chica">
-		<h4>${exc.localidad}</h4>
-		<h4>${exc.precioTotal}</h4>
-		<h5>${carrito.precioTotal}</h5>
-		</div>
-		</div>
+		<section class="container info-carrito">
+			<h1 class="titulo-excursiones-carrito">${exc.tipoExcursion}</h1>
+			<div class="conjunto-excursiones-carrito">
+				<img src="${exc.imagenHomePage}" class="imagen-chica">
+				<div class="row">
+					<h4 class="info-excursiones-carrito">Fecha de Realización: ${exc.fecha}</h4>
+					<h4 class="info-excursiones-carrito">Cantidad de Personas: ${exc.personas}</h4>	
+					<h4 class="info-excursiones-carrito precio-total-carrito">Precio Total: ${exc.precioTotal}</h4>
+				</div>
+				<button onclick="carrito.eliminar(${exc.id})" class="fa-solid fa-trash-can btn-carrito"></button>
+			</div>	
+			<h4>${exc.localidad}</h4>
+		<section>
 		`;
 		modalCarrito.appendChild(card);
 		count++;
 		console.log("Llamado" + count + ' ' + card);
+		//	<h5>${carrito.precioTotal}</h5>
 	});	
 }
 

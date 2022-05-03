@@ -105,7 +105,7 @@
 }
 
 .imagen-chica {
-	width: 10rem;
+	width: 15rem;
 }
 
 .imagen-catalogo-excursiones {
@@ -147,8 +147,26 @@ border: none;
 	font-weight: bold;
 	font-size: 40px;
 	font-family: "Oxygen", sans-serif;
-	position: inherit;
 	margin-left: 10rem;
-	margin-bottom: 3rem;
-	text-decoration: underline 5px #173E58 ;
+	text-decoration: underline 5px #173E58;
+	margin-bottom: 1.5rem;
+}
+.titulo-excursiones-carrito{
+	font-family: "Oxygen", sans-serif;
+	font-size: 20px;
+	letter-spacing: 0px;
+}
+.conjunto-excursiones-carrito{
+	display: flex;
+}
+.info-excursiones-carrito{
+	margin-left: 4rem;
+}
+.precio-total-carrito{
+	font-weight: bold;
+}
+.tachito{
+	margin-left: 8rem;
+	margin-top: 3rem;
+	font-size: 2.5rem;
 }

@@ -45,6 +45,7 @@
 		<link rel="stylesheet" href="css/custom.css" type="text/css" />
 		<!--Libraries related pages-->
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+		<script src="https://kit.fontawesome.com/15ffdbd2d0.js" crossorigin="anonymous"></script>
 		<!--Javascript related pages-->
 		<script src="js/classesCarrito.js" defer></script>
 		<script src="js/excursiones.js" defer></script>
@@ -136,8 +137,14 @@
 		<dialog class="polaroid" id="modal-info"></dialog>
 		
 		<!-- MODAL Carrito -->
-		<dialog  class="estampilla" id="modal-carrito"></dialog>
-        
+		<dialog  class="estampilla" id="modal-carrito">
+			<div class="text-titulo-carrito">Mi Carrito de Compras</div>
+			<div class="text-titulo-carrito">Precio Total: $<span class="cart-total">0</span></div>
+			<div id="informacion-excursiones"></div>
+			
+			<button class="button-comprar">Comprar</button>
+		</dialog>
+
 		<footer
 			class="mbr-section mbr-section--relative mbr-section--fixed-size"
 			id="footer1-94"
