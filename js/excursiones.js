@@ -4,12 +4,15 @@ const carrito = new Carrito(JSON.parse(localStorage.getItem("carrito")) || []);
 //console.log(carrito.excursionesDisponibles.reduce((acc,element)=>acc+=element.precio,0));
 
 /*-------------------------- BODY -------------------------- */
-mostrarExcursionesDisponibles();
 const modalInfo = document.querySelector("#modal-info");
 const modalCarrito = document.querySelector("#modal-carrito");
+let cardCarrito = document.querySelector("#btnCarrito");
 let personas = 0;
 let fecha = null ;
 let precioActualizado = null;
+
+mostrarExcursionesDisponibles();
+mostrarCarrito();
 //let excursionesSeleccionadasCarrito = traerExcursionesSeleccionadas();
 /*-------------------------- FUNCIONES -------------------------- */
 function mostrarExcursionesDisponibles() {
@@ -155,31 +158,32 @@ function mostrarInfo(tipo, localidad, descripcion, precio, id, imagenVintage, ho
 
 
 function mostrarCarrito() {
-	modalCarrito.toggleAttribute("open");
-	carrito.excursionesSeleccionadas.forEach((exc) => {
-		let count= 0;
-		let card = document.createElement("div");
-		card.innerHTML = `
-		<section class="container info-carrito">
-			<h1 class="titulo-excursiones-carrito">${exc.tipoExcursion}</h1>
-			<div class="conjunto-excursiones-carrito">
-				<img src="${exc.imagenHomePage}" class="imagen-chica">
-				<div class="row">
-					<h4 class="info-excursiones-carrito">Fecha de Realización: ${exc.fecha}</h4>
-					<h4 class="info-excursiones-carrito">Cantidad de Personas: ${exc.personas}</h4>	
-					<h4 class="info-excursiones-carrito precio-total-carrito">Precio Total: ${exc.precioTotal}</h4>
-				</div>
-				<button onclick="carrito.eliminar(${exc.id})" class="fa-solid fa-trash-can btn-carrito"></button>
-			</div>	
-			<h4>${exc.localidad}</h4>
-		<section>
-		`;
-		modalCarrito.appendChild(card);
-		count++;
-		console.log("Llamado" + count + ' ' + card);
-		//	<h5>${carrito.precioTotal}</h5>
-	});	
+	cardCarrito.addEventListener("click", () => {
+		modalCarrito.toggleAttribute("open");
+		//cardCarrito.innerHTML = ` `;
+		carrito.excursionesSeleccionadas.forEach((exc) => {
+			cardCarrito = document.createElement("div");
+			cardCarrito.innerHTML = `
+			<section class="container info-carrito">
+				<h1 class="titulo-excursiones-carrito">${exc.tipoExcursion}</h1>
+				<div class="conjunto-excursiones-carrito">
+					<img src="${exc.imagenHomePage}" class="imagen-chica">
+					<div class="row">
+						<h4 class="info-excursiones-carrito">Fecha de Realización: ${exc.fecha}</h4>
+						<h4 class="info-excursiones-carrito">Cantidad de Personas: ${exc.personas}</h4>	
+						<h4 class="info-excursiones-carrito precio-total-carrito">Precio Total: ${exc.precioTotal}</h4>
+					</div>
+					<button onclick="carrito.eliminar(${exc.id})" class="fa-solid fa-trash-can btn-carrito"></button>
+				</div>	
+				<h4>${exc.localidad}</h4>
+			<section>
+			`;
+			modalCarrito.appendChild(cardCarrito);
+			console.log("VER", cardCarrito)
+		});	
+	})
 }
+
 
 
 function agregarExcursion(idExcusrsion) {
