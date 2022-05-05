@@ -86,7 +86,7 @@ function mostrarMensaje(mensaje) {
 		text: mensaje + " 🛒",
 		duration: 3500,
 		style: {
-			background: "linear-gradient(to right, #212F3C, #1F618D)",
+			background: "linear-gradient(to right, #2874A6, #1F618D)",
 			width: "16%",
 		},
 	}).showToast();
