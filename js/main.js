@@ -87,7 +87,7 @@ function mostrarMensaje(mensaje) {
 		duration: 3500,
 		style: {
 			background: "linear-gradient(to right, #212F3C, #1F618D)",
-			width: "20%",
+			width: "16%",
 		},
 	}).showToast();
 }
