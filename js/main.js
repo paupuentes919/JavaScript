@@ -43,6 +43,7 @@ function agregarExcursion(idExcusrsion) {
 	carrito.agregar(idExcusrsion, personas, fecha);
 	modalInfo.toggleAttribute("open");
 	mostrarMensaje("Agregado al carrito");
+	borrarCache();
 
 	// espero al fetch del carrito
 	setTimeout(() => {

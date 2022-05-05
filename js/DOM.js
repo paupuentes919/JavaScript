@@ -46,10 +46,15 @@ btnComprar.addEventListener("click", () => {
     Swal.fire({
         icon: 'success',
         title: 'Tu compra ha sido realizada',
-        showConfirmButton: true,
+        showConfirmButton: false,
         width: '50rem',
+		timer: 2500
       })
+	localStorage.clear();
 
+	setTimeout(() => {
+		window.location.reload();
+	}, 2500);
 });
 
 function habilitarBotonCompra(){
