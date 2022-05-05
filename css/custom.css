@@ -1,16 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Homemade+Apple&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Homemade+Apple&family=Rock+Salt&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Grape+Nuts&family=Homemade+Apple&family=Rock+Salt&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Architects+Daughter&family=Grape+Nuts&family=Homemade+Apple&family=Rock+Salt&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Architects+Daughter&family=Bona+Nova&family=Grape+Nuts&family=Homemade+Apple&family=Rock+Salt&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Architects+Daughter&family=Bona+Nova&family=Freehand&family=Grape+Nuts&family=Homemade+Apple&family=Rock+Salt&display=swap');
+/*--------------------------------------------------IMPORTS--------------------------------------------------*/
+
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Architects+Daughter&family=Bona+Nova&family=Freehand&family=Grape+Nuts&family=Homemade+Apple&family=Rock+Salt&family=Shadows+Into+Light&display=swap');
+
+/*--------------------------------------------------GRILLA DE EXCURSIONES--------------------------------------------------*/
+
 #contenedor-excursiones {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	grid-gap: 2rem;
 }
+
+/*--------------------------------------------------MODAL EXCURSIONES--------------------------------------------------*/
 
 .polaroid {
 	background-color: #d5d8dc;
@@ -29,43 +29,9 @@
 	font-family: "Bona Nova", serif;
 	box-shadow: 5px 5px 40px;
 }
-
 .polaroid img {
 	max-width: 50rem;
 }
-
-.estampilla {
-	/* background-color: #fff;
-	background-image: url("http://todovector.com/vector/figuras-y-formas/timbres/estampillas/3.png");
-	background-repeat: no-repeat;
-	background-position: right;
-	border: 2rem solid #943126;
-	outline: 2rem dashed #154360;
-	outline-offset: -20px;
-	min-width: 50rem;
-	min-height: 50rem;
-	position: fixed;
-	z-index: 1000;
-	inset: 0;
-	font-family: "Oxygen", sans-serif;
-	box-shadow: 5px 5px 40px;
-	transform: translateX(0); */
-	position: fixed;
-  	top: 80px;
-  	right: -1145px;
-  	width: 35%;
-  	height: 91%;
-  	overflow: scroll;
-  	z-index: 3;
-  	background: #F2F4F4;
-  	padding: 1.5rem;
-  	transition: all 0.3s linear; 
-}
-
-.estampilla img {
-	max-width: 50rem;
-}
-
 .texto-vintage-titulo {
 	font-family: "Rock Salt", cursive;
 }
@@ -76,17 +42,14 @@
     padding: 2rem;
     margin-top: -3.8rem;
 }
-
 .texto-vintage-localidad {
 	font-family: 'Shadows Into Light', cursive;
     font-size: 20px;
 }
-
 .fotos-vintage {
 	min-width: 100%;
 	height: 35rem;
 }
-
 .modal-recuadro {
 	border-color: #000;
 	background-color: #d5d8dc;
@@ -99,25 +62,8 @@
     margin-top: 2rem;
     margin-right: 2rem;
 }
-
 .btn-title {
 	pointer-events: auto !important;
-}
-
-.imagen-chica {
-	width: 15rem;
-}
-
-.imagen-catalogo-excursiones {
-	width: 37rem;
-}
-.contenedor-informacion{
-    display: flex;
-    margin-right: 2rem;
-}
-.informacion-excursiones{
-    font-weight: bold;
-    text-decoration: underline 1px #154360;
 }
 #selectorPersonas{
     width: 9.3rem;
@@ -136,12 +82,34 @@
 .horario2{
     margin-right: 2.2rem;
 }
-#menu-93.mbr-navbar--stuck .mbr-navbar__section{
-	background-color: #173E58 ;
+
+/*--------------------------------------------------MODAL CARRITO COMPRAS--------------------------------------------------*/
+
+.estampilla {
+	position: fixed;
+  	top: 80px;
+  	right: -1145px;
+  	width: 35%;
+  	height: 91%;
+  	overflow: scroll;
+  	z-index: 3;
+  	background: #F2F4F4;
+  	padding: 1.5rem;
+  	transition: all 0.3s linear; 
 }
-.btn-carrito{
-background-color: transparent;
-border: none;
+.estampilla img {
+	max-width: 50rem;
+}
+.imagen-chica {
+	width: 15rem;
+}
+.contenedor-informacion{
+    display: flex;
+    margin-right: 2rem;
+}
+.informacion-excursiones{
+    font-weight: bold;
+    text-decoration: underline 1px #154360;
 }
 .text-titulo-carrito{
 	font-weight: bold;
@@ -170,3 +138,39 @@ border: none;
 	margin-top: 3rem;
 	font-size: 2.5rem;
 }
+.button-comprar{
+	margin-top: 2rem;
+	margin-left: 11rem;
+}
+.text-precio-total-carrito{
+	font-weight: bold;
+	font-size: 20px;
+	font-family: "Oxygen", sans-serif;
+	margin-left: 6rem;
+	padding-top: 2rem;	
+}
+.rectangulo-precio-compra{
+	margin-left: 14rem;
+	margin-right: 10rem;
+	margin-top: 3rem;
+	padding-bottom: 2rem;
+	background-color: #D6DBDF;
+}
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-left: 5rem;
+	font-size: x-large;
+}
+
+/*--------------------------------------------------NAVBAR--------------------------------------------------*/
+
+#menu-93.mbr-navbar--stuck .mbr-navbar__section{
+	background-color: #173E58 ;
+}
+.btn-carrito{
+background-color: transparent;
+border: none;
+}
+
+

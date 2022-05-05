@@ -1,8 +1,24 @@
-const carrito = new Carrito(JSON.parse(localStorage.getItem("carrito")) || []);
+/*--------------------------------------------------DECLARACION DE VARIABLES--------------------------------------------------*/
 
 let personas = 0;
 let fecha = null;
 let precioActualizado = null;
+
+/*--------------------------------------------------CARRITO--------------------------------------------------*/
+
+const carrito = new Carrito(JSON.parse(localStorage.getItem("carrito")) || []);
+
+function actualizarStorage(array) {
+	localStorage.setItem("carrito", JSON.stringify(array));
+}
+
+function eliminarExcursion(idExcusrsion) {
+	carrito.eliminar(idExcusrsion);
+	mostrarMensaje("Quitado del carrito");
+	mostrarCarrito();
+}
+
+/*--------------------------------------------------CREAR GRILLA DE EXCURSIONES--------------------------------------------------*/
 
 fetchExcursiones();
 
@@ -21,23 +37,7 @@ function mostrarExcursionesDisponibles(array) {
 	});
 }
 
-function seleccionarCantidadPersonas() {
-	let cantidadPersonas = null;
-	while (isNaN(cantidadPersonas) || cantidadPersonas < 1) {
-		cantidadPersonas = prompt(
-			"Cuantas personas van a realizar esta excursion?"
-		);
-	}
-	return cantidadPersonas;
-}
-
-function calcularPrecioTotal(cantidad, precio) {
-	return (precioTotal = cantidad * precio);
-}
-
-function actualizarStorage(array) {
-	localStorage.setItem("carrito", JSON.stringify(array));
-}
+/*--------------------------------------------------CREAR CARD EXCURSION INDIVIDUAL--------------------------------------------------*/
 
 function agregarExcursion(idExcusrsion) {
 	carrito.agregar(idExcusrsion, personas, fecha);
@@ -50,17 +50,11 @@ function agregarExcursion(idExcusrsion) {
 	}, 10);
 }
 
-function eliminarExcursion(idExcusrsion) {
-	carrito.eliminar(idExcusrsion);
-	mostrarMensaje("Quitado del carrito");
-	mostrarCarrito();
-}
-
 function actualizarPrecio(event) {
 	personas = event.target.value;
 	let total;
 
-	if (fecha != null) habilitarBoton();
+	if (fecha != null) habilitarBotonExcursion();
 
 	fetch("json/dataExcursiones.json")
 		.then((resultado) => resultado.json())
@@ -76,8 +70,15 @@ function actualizarPrecio(event) {
 
 function actualizarFecha(event) {
 	fecha = event.target.value;
-	if (personas != 0) habilitarBoton();
+	if (personas != 0) habilitarBotonExcursion();
 }
+
+function borrarCache() {
+	personas = 0;
+	fecha = null;
+}
+
+/*--------------------------------------------------MENSAJE TOASTIFY--------------------------------------------------*/
 
 function mostrarMensaje(mensaje) {
 	Toastify({
@@ -90,7 +91,3 @@ function mostrarMensaje(mensaje) {
 	}).showToast();
 }
 
-function borrarCache() {
-	personas = 0;
-	fecha = null;
-}

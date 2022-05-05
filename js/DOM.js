@@ -1,20 +1,74 @@
+/*--------------------------------------------------DECLARACION DE VARIABLES--------------------------------------------------*/
+
 const modalInfo = document.querySelector("#modal-info");
 const modalCarrito = document.querySelector("#modal-carrito");
 const containerCarrito = document.querySelector("#informacion-excursiones");
+const btnComprar = document.querySelector("#btn-comprar");
 const carritoTotal = document.querySelector(".cart-total");
 let catalogoExcursiones = document.querySelector("#contenedor-excursiones");
 let toggleCarrito = document.querySelector("#btnCarrito");
+
+/*--------------------------------------------------MOSTRAR CARRITO--------------------------------------------------*/
 
 toggleCarrito.addEventListener("click", () => {
 	modalCarrito.toggleAttribute("open");
 	if (modalCarrito.attributes.open) return mostrarCarrito();
 });
 
-function habilitarBoton() {
+function mostrarCarrito() {
+	carritoTotal.innerHTML = carrito.calcularTotal();
+	containerCarrito.innerHTML = "";
+
+	carrito.excursionesSeleccionadas.forEach((exc) => {
+		let card = document.createElement("div");
+		card.innerHTML = `
+			<section class="container info-carrito">
+				<h1 class="titulo-excursiones-carrito">${exc.tipoExcursion}</h1>
+				<div class="conjunto-excursiones-carrito">
+					<img src="${exc.imagenHomePage}" class="imagen-chica">
+					<div class="row">
+						<h4 class="info-excursiones-carrito">Fecha de Realización: ${exc.fecha}</h4>
+						<h4 class="info-excursiones-carrito">Cantidad de Personas: ${exc.personas}</h4>	
+						<h4 class="info-excursiones-carrito precio-total-carrito">Precio Total: ${exc.precioTotal}</h4>
+					</div>
+					<button onclick="eliminarExcursion(${exc.id})" class="fa-solid fa-trash-can btn-carrito"></button>
+				</div>	
+				<h4>${exc.localidad}</h4>
+			<section>
+			`;
+		containerCarrito.appendChild(card);
+	});
+}
+
+/*--------------------------------------------------BOTON COMPRAR--------------------------------------------------*/
+
+btnComprar.addEventListener("click", () => {
+    Swal.fire({
+        icon: 'success',
+        title: 'Tu compra ha sido realizada',
+        showConfirmButton: true,
+        width: '50rem',
+      })
+
+});
+
+function habilitarBotonCompra(){
+    btnComprar.removeAttribute("disabled");
+
+}
+function deshabilitarBotonCompra(){
+    btnComprar.setAttribute("disabled","");
+}
+
+/*--------------------------------------------------BOTON AGREGAR AL CARRITO--------------------------------------------------*/
+
+function habilitarBotonExcursion() {
 	const btnAgregar = document.querySelector("#btnAgregar");
 	btnAgregar.removeAttribute("disabled");
 	btnAgregar.setAttribute("title", "Agregar al carrito");
 }
+
+/*--------------------------------------------------GRILLA DE EXCURSIONES--------------------------------------------------*/
 
 function crearCard(exc) {
 	return `
@@ -29,6 +83,8 @@ function crearCard(exc) {
     </div>
 </div>`;
 }
+
+/*--------------------------------------------------CARD EXCURSION INDIVIDUAL--------------------------------------------------*/
 
 function mostrarInfo(
 	tipo,
@@ -79,29 +135,4 @@ function mostrarInfo(
 
 		</div>
   `;
-}
-
-function mostrarCarrito() {
-	carritoTotal.innerHTML = carrito.calcularTotal();
-	containerCarrito.innerHTML = "";
-
-	carrito.excursionesSeleccionadas.forEach((exc) => {
-		let card = document.createElement("div");
-		card.innerHTML = `
-			<section class="container info-carrito">
-				<h1 class="titulo-excursiones-carrito">${exc.tipoExcursion}</h1>
-				<div class="conjunto-excursiones-carrito">
-					<img src="${exc.imagenHomePage}" class="imagen-chica">
-					<div class="row">
-						<h4 class="info-excursiones-carrito">Fecha de Realización: ${exc.fecha}</h4>
-						<h4 class="info-excursiones-carrito">Cantidad de Personas: ${exc.personas}</h4>	
-						<h4 class="info-excursiones-carrito precio-total-carrito">Precio Total: ${exc.precioTotal}</h4>
-					</div>
-					<button onclick="eliminarExcursion(${exc.id})" class="fa-solid fa-trash-can btn-carrito"></button>
-				</div>	
-				<h4>${exc.localidad}</h4>
-			<section>
-			`;
-		containerCarrito.appendChild(card);
-	});
 }

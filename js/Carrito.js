@@ -1,3 +1,5 @@
+/*--------------------------------------------------CLASS CARRITO--------------------------------------------------*/
+
 class Carrito {
 	constructor(excursionesSeleccionadas) {
 		this.excursionesSeleccionadas = excursionesSeleccionadas;
@@ -41,6 +43,13 @@ class Carrito {
 		});
 
 		this.precioTotal = total;
+
+		if( total > 0 ){
+			habilitarBotonCompra();
+		}
+		else if ( total == 0 ){
+			deshabilitarBotonCompra();		
+		}
 		return total;
 	}
 }

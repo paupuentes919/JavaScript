@@ -5,33 +5,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="generator" content="Mobirise v2.6.1, mobirise.com" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!-- <link
-			rel="shortcut icon"
-			href="assets/images/discover-mobile-350x350-16.png"
-			type="image/x-icon"
-		/> -->
-
 		<meta name="description" content="Free Bootstrap Template" />
 		<title>Discovery Argentina</title>
-
 		<!--Favicon Icons-->
-		<link
-			rel="apple-touch-icon"
-			sizes="180x180"
-			href="img/favicon/apple-touch-icon.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="img/favicon/favicon-32x32.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="16x16"
-			href="img/favicon/favicon-16x16.png"
-		/>
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png"/>
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png"/>
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png"/>
 		<link rel="shortcut icon" sizes="320x320" href="img/favicon/favicon.ico" />
 		<!--CSS related pages-->
 		<link
@@ -48,25 +27,20 @@
 		<link rel="stylesheet" href="css/mbr-additional.css" type="text/css" />
 		<link rel="stylesheet" href="css/custom.css" type="text/css" />
 		<!--Libraries related pages-->
-		<script
-			type="text/javascript"
-			src="https://cdn.jsdelivr.net/npm/toastify-js"
-		></script>
-		<script
-			src="https://kit.fontawesome.com/15ffdbd2d0.js"
-			crossorigin="anonymous"
-		></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="https://kit.fontawesome.com/15ffdbd2d0.js" crossorigin="anonymous"></script>
 		<!--Javascript related pages-->
 		<script src="js/Carrito.js" defer></script>
 		<script src="js/DOM.js" defer></script>
 		<script src="js/main.js" defer></script>
-
 		<!--NavBar JQuery-->
 		<script src="js/jquery.min.js" defer></script>
 		<script src="js/navBar-jQuery.js" defer></script>
 	</head>
 
 	<body>
+		<!--NAVBAR-->
 		<section
 			class="mbr-navbar mbr-navbar--freeze mbr-navbar--absolute mbr-navbar--transparent mbr-navbar--sticky mbr-navbar--auto-collapse"
 			id="menu-93"
@@ -83,10 +57,9 @@
 										><img
 											height="55px"
 											width="55px"
-											src="img/mate.png"
+											src="img/Header/mate.png"
 											alt="Argentina Experience" /></a
 								></span>
-								<!--<span class="mbr-brand__name"><a class="mbr-brand__name text-white" href="#">Argentina Experience</a></span>-->
 							</span>
 						</div>
 						<div class="mbr-navbar__column mbr-navbar__menu">
@@ -95,11 +68,10 @@
 							>
 								<div class="mbr-navbar__column">
 									<button id="btnCarrito" class="btn-carrito">
-										<!--onclick="mostrarCarrito()"-->
 										<img
 											height="55px"
 											width="55px"
-											src="img/carritosupermercado.png"
+											src="img/Header/carritosupermercado.png"
 										/>
 									</button>
 								</div>
@@ -109,11 +81,11 @@
 				</div>
 			</div>
 		</section>
-
+	<!--IMAGEN HEADER-->
 		<section
 			class="content-2 simple col-1 col-undefined mbr-parallax-background mbr-after-navbar"
 			id="content5-92"
-			style="background-image: url(img/arr40.jpg); height: 495px"
+			style="background-image: url(img/Header/argentina40.jpg); height: 495px"
 		>
 			<div
 				class="mbr-overlay"
@@ -137,7 +109,7 @@
 				</div>
 			</div>
 		</section>
-		<!--CATALOGO DE EXCURSIONES-->
+	<!--CATALOGO DE EXCURSIONES-->
 		<section
 			class="content-2 col-4"
 			id="features1-108"
@@ -147,21 +119,20 @@
 				<div id="contenedor-excursiones"></div>
 			</div>
 		</section>
-
-		<!-- MODAL Excursiones -->
+	<!-- MODAL EXCURSIONES -->
 		<dialog class="polaroid" id="modal-info"></dialog>
-
-		<!-- MODAL Carrito -->
+	<!-- MODAL CARRITO -->
 		<dialog class="estampilla" id="modal-carrito">
 			<div class="text-titulo-carrito">Mi Carrito de Compras</div>
-			<div class="text-titulo-carrito">
-				Precio Total: $<span class="cart-total">0</span>
-			</div>
 			<div id="informacion-excursiones"></div>
-
-			<button class="button-comprar">Comprar</button>
+			<div class="rectangulo-precio-compra">
+				<div class="text-precio-total-carrito">
+					Precio Total: $<span class="cart-total">0</span>
+				</div>
+				<button disabled id = "btn-comprar" class="btn btn-default button-comprar">Comprar</button>
+			</div>
 		</dialog>
-
+	<!--FOOTER-->
 		<footer
 			class="mbr-section mbr-section--relative mbr-section--fixed-size"
 			id="footer1-94"
